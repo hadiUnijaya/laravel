@@ -16,8 +16,10 @@ class CsvImport implements ToModel
     public function model(array $row)
     {
         return new Post([
-            'title'      =>  $row["title"],
-            'body'     =>  $row["body"],
+            'user_id' => auth()->id(),
+            'title'      =>  $row["0"],
+            'body'     =>  $row["1"],
+            'cover_image' => 'no_image.jpg',
         ]);
     }
 }

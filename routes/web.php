@@ -41,9 +41,12 @@ Route::get('/import_excel', 'importController@index');
 Route::post('/import_excel/import', 'importController@import');
 
 
-Route::get('/json', 'ClientController@getAllPosts');
-Route::get('/json/{id}', 'ClientController@getPostById');
+Route::get('/json/{page?}', 'ClientController@getAllPosts');
+Route::get('/json/user/{id}', 'ClientController@getPostById');
 Route::get('/json/create', 'ClientController@create');
+Route::get('/json/register', function () {
+    return view('frontend.register');
+   });
 Route::get('/json/store', 'ClientController@store');
 Route::get('/json/edit/{id}', 'ClientController@editPost');
 Route::post('/json/update', 'ClientController@update');

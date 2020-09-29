@@ -15,6 +15,7 @@ class ClientController extends Controller
 
     public function getAllPosts()
     {
+        
         $client = new Client(['base_uri' => 'https://gorest.co.in/public-api/']);
         $response = $client->request('GET', 'users');
         $body = $response->getBody()->getContents();
@@ -24,9 +25,10 @@ class ClientController extends Controller
         return view('frontend.view2',compact('finaldata'));
     }
 
-    public function create()
+
+    public function register()
     {
-        return view('frontend.create');
+        return view('frontend.register');
     }
 
     public function getPostById($id)

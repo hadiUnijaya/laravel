@@ -179,6 +179,7 @@ class PostController extends Controller
         {   //delete
             Storage::delete('public/cover_images/'.$post->cover_image);
         }
+
         $post-> delete();
         return redirect('/posts')->with('success', 'Post Removed');
     }

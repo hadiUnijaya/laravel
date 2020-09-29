@@ -23,8 +23,9 @@ class importController extends Controller
         'select_file'  => 'required|mimes:xls,xlsx'
         ]);
 
-        $path = $request->file('select_file')->getRealPath();
-        Excel::import(new CsvImport, $path);
+        $path1 = $request->file('select_file')->store('temp'); 
+        $path=storage_path('app').'/'.$path1;  
+        $data = \Excel::import(new CsvImport,$path);
         
         return back()->with('success', 'Excel Data Imported successfully.');
     }

@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('content')
-    <table class="table table-striped projects">
-      <a class="btn btn-success" href="{{ url('json/create') }}">Create</a>
+    <table class="table table-striped projects table-responsive">
+      <hr><hr>
+      <a class="btn btn-success" href="{{ url('json/register') }}">Create</a>
     </tbody>
     <table class="table table-bordered" id="table">
       <thead>
@@ -31,7 +32,7 @@
               <form action="{{ url('json/delete',$value['id']) }}" method="POST">
  
           
-                  <a class="btn btn-success" href="{{ url('json',$value['id']) }}">View</a>
+                  <a class="btn btn-success" href="{{ url('json/user',$value['id']) }}">View</a>
                   <a class="btn btn-primary" href="{{ url('json/edit',$value['id']) }}">Edit</a>
  
 
@@ -44,7 +45,17 @@
         
       </tr>
       @endforeach
+      
   </tbody>
   </table>
+  <nav aria-label="...">
+    <ul class="pagination pagination-lg">
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1">1</a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+    </ul>
+  </nav>
 </table>
 @endsection

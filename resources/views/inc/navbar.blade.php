@@ -31,6 +31,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="/json">List of User</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/import_excel">Import</a>
+            </li>
             @endauth
             </ul>
             <!-- Right Side Of Navbar -->
