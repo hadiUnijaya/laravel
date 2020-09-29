@@ -18,12 +18,6 @@
   </div>
  @endif
 
- @if($message = Session::get('success'))
- <div class="alert alert-success alert-block">
-  <button type="button" class="close" data-dismiss="alert">×</button>
-         <strong>{{ $message }}</strong>
- </div>
- @endif
  <form method="POST" enctype="multipart/form-data" action="{{ url('/import_excel/import') }}">
   {{ csrf_field() }}
   <div class="form-group">
@@ -49,7 +43,7 @@
  <br />
  <div class="panel panel-default">
   <div class="panel-heading">
-   <h3 class="panel-title">Posts Data</h3>
+   <h3 class="panel-title"> All Posts Data</h3>
   </div>
   <div class="panel-body">
    <div class="table-responsive">

@@ -14,12 +14,13 @@ class CsvImport implements ToModel
     * @return \Illuminate\Database\Eloquent\Model|null
     */
     public function model(array $row)
-    {
+    {   
+        $filename = 'noimage.jpg';
         return new Post([
             'user_id' => auth()->id(),
             'title'      =>  $row["0"],
             'body'     =>  $row["1"],
-            'cover_image' => 'no_image.jpg',
-        ]);
+            'cover_image' => $filename,
+        ]  );
     }
 }

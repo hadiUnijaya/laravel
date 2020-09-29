@@ -14,6 +14,7 @@ class importController extends Controller
     {
         
         $data = DB::table('posts')->orderBy('id','DESC')->get();
+        
         return view('posts.importexcel', compact('data'));
     }
 

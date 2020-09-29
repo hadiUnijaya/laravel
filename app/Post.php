@@ -12,7 +12,7 @@ class Post extends Model
     public $primarykey = 'id' ;
     //timestamps
     public $timestamps = true;
-    protected $fillable = ['title', 'body', 'user_id'];
+    protected $fillable = ['title', 'body', 'user_id', 'cover_image'];
 
     public function user(){
         return $this->belongsTo('App\User');
